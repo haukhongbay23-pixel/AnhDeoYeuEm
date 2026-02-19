@@ -1,0 +1,109 @@
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
+ImageButton.Size = UDim2.new(0, 40, 0, 40)
+ImageButton.Draggable = true
+ImageButton.BackgroundTransparency = 0
+ImageButton.ImageTransparency = 0
+ImageButton.Image = "rbxassetid://82328179957841"
+
+UICorner.CornerRadius = UDim.new(1, 10) 
+UICorner.Parent = ImageButton
+
+local isOpen = true
+
+ImageButton.MouseButton1Click:Connect(function()
+    local vim = game:GetService("VirtualInputManager")
+    vim:SendKeyEvent(true, Enum.KeyCode.End, false, game)
+    vim:SendKeyEvent(false, Enum.KeyCode.End, false, game)
+end)
+
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+repeat wait() until game:IsLoaded()
+local Window = Fluent:CreateWindow({
+    Title = "Chii Hauu Tổng Hợp",
+    SubTitle = "Blox Fruit",
+    TabWidth = 157,
+    Size = UDim2.fromOffset(440, 300),
+    Acrylic = false,
+    Theme = "White",
+    MinimizeKey = Enum.KeyCode.End
+})
+local Tabs = {
+        Main0=Window:AddTab({ Title="Thông Tin" }),
+        Main1=Window:AddTab({ Title="Script Farm" }),
+        Main2=Window:AddTab({ Title="Fix Lag" }),
+        Main3=Window:AddTab({ Title="Farm Chest" }),
+        Main4=Window:AddTab({ Title="Script Hop" }),
+       Main5=Window:AddTab({ Title="lin tinh" }),
+}
+    Tabs.Main0:AddButton({
+    Title = "Discord",
+    Description = "Chii Hauu Community",
+    Callback = function()
+        setclipboard("https://discord.gg/5HSksFP6V")
+    end
+})
+
+    Tabs.Main0:AddButton({
+    Title = "Youtuber",
+    Description = "Chii Hauu",
+    Callback = function()
+        setclipboard("https://www.youtube.com/@chiihauu")
+    end
+})
+    
+    Tabs.Main1:AddButton({
+    Title="Maru Hub",
+    Description="",
+    Callback=function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+getgenv().Key = "MARU-JRKAX-LU2V-07TH-KR52Q-FECF1"
+getgenv().id = "1251187246653247488"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
+  end
+})
+
+Tabs.Main3:AddButton({
+    Title="Chest Hub",
+    Description="",
+    Callback=function()
+	  getgenv().Version = "V3"
+getgenv().Team = "Marines"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TlDinhKhoi/Xeter/refs/heads/main/Main.lua"))()
+  end
+})
+Tabs.Main1:AddButton({
+    Title="Gravity Hub",
+    Description="",
+    Callback=function()
+	  getgenv().Version = "V3"
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()
+	end
+})
+Tabs.Main1:AddButton({
+    Title="XoNo Hub",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/hubedubdei-afk/1dc1fd27f4f1db90238cae54eff264dd/raw/9c8f103428355eccf1c70ec8c99911515920f877/gistfile1.txt"))()
+end
+})
+Tabs.Main1:AddButton({
+    Title="3Toc Hub",
+    Description="",
+    Callback=function()
+ loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/245375592509cc0bcb3526982431ab18.lua"))()
+ end
+})
